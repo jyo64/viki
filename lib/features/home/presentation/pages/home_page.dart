@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:viki/core/theme/app_colors.dart';
 import 'package:viki/features/inventory/data/services/inventory_service.dart';
 import 'package:viki/features/inventory/domain/models/item.dart';
 
@@ -64,7 +65,7 @@ class HomePageState extends State<HomePage> {
           subtitle: Text(_calculateDaysToExpiry(item.expiryDate)),
           leading: const Icon(Icons.inventory_2),
           trailing: IconButton(
-            icon: const Icon(Icons.delete, color: Colors.red),
+            icon: const Icon(Icons.delete, color: AppColors.errorColor),
             onPressed: () async {
               await _inventoryService.deleteItem(item.id);
               await loadItems();

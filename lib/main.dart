@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:viki/features/navigation/presentation/widgets/navigation_wrapper.dart';
+import 'package:viki/core/theme/app_colors.dart';
 
 void main() {
   runApp(
@@ -19,9 +20,7 @@ class MyApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 168, 137, 222),
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.seedColor),
       ),
       home: const MainNavigationWrapper(),
     );
